@@ -1,7 +1,6 @@
 import Image from "next/legacy/image";
 import Link from "next/link";
 import { parseISO, format } from "date-fns";
-import { PhotographIcon } from "@heroicons/react/outline";
 import CategoryLabel from "@components/blog/category";
 
 export default function PostList({ post, aspect, preloadImage }) {
@@ -44,7 +43,7 @@ export default function PostList({ post, aspect, preloadImage }) {
               post.title ===
               `Architectural Engineering Wonders of the modern era for your Inspiration`
                 ? `/post/`
-                : null
+                : "#"
             }>
             <span
               className="     bg-gradient-to-r from-green-200 to-green-100 dark:from-purple-800 dark:to-purple-900
@@ -67,7 +66,7 @@ export default function PostList({ post, aspect, preloadImage }) {
                   post.title ===
                   `Architectural Engineering Wonders of the modern era for your Inspiration`
                     ? `/post/`
-                    : null
+                    : "#"
                 }>
                 {post.title}
               </Link>

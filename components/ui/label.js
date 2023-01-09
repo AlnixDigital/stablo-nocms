@@ -1,5 +1,3 @@
-import { cx } from "@utils/all";
-
 export default function Label(props) {
   const color = {
     green: "text-emerald-700",
@@ -10,10 +8,10 @@ export default function Label(props) {
   };
   return (
     <span
-      className={cx(
-        "inline-block mt-5 text-xs font-medium tracking-wider uppercase ",
-        color[props.color] || color[pink]
-      )}>
+      className={
+        ("inline-block mt-5 text-xs font-medium tracking-wider uppercase ",
+        color[props.color] || color[pink])
+      }>
       {props.children}
     </span>
   );
