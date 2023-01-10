@@ -10,17 +10,18 @@ export default function PostList({ post, aspect, preloadImage }) {
     <>
       <div className="cursor-pointer group">
         <div
-          className={
-            ("relative overflow-hidden transition-all bg-gray-100 rounded-md dark:bg-gray-800   hover:scale-105",
-            aspect === "landscape" ? "aspect-video" : "aspect-square")
-          }>
+          className={{"relative overflow-hidden transition-all bg-gray-100 rounded-md dark:bg-gray-800   hover:scale-105",
+            aspect === "landscape" ? "aspect-video" : "aspect-square"}}
+            
+          >
           <Link
             href={
               post.title ===
               `Architectural Engineering Wonders of the modern era for your Inspiration`
                 ? `/post/`
-                : null
-            }>
+                : "/"
+            }
+            legacyBehavior>
             <a>
               <Image
                 src={imageProps}
@@ -43,8 +44,9 @@ export default function PostList({ post, aspect, preloadImage }) {
               post.title ===
               `Architectural Engineering Wonders of the modern era for your Inspiration`
                 ? `/post/`
-                : "#"
-            }>
+                : "/"
+            }
+            legacyBehavior>
             <span
               className="     bg-gradient-to-r from-green-200 to-green-100 dark:from-purple-800 dark:to-purple-900
           bg-[length:0px_10px]
@@ -66,8 +68,9 @@ export default function PostList({ post, aspect, preloadImage }) {
                   post.title ===
                   `Architectural Engineering Wonders of the modern era for your Inspiration`
                     ? `/post/`
-                    : "#"
-                }>
+                    : "/"
+                }
+                legacyBehavior>
                 {post.title}
               </Link>
             </p>

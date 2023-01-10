@@ -2,7 +2,7 @@ import erikaOliver from "../public/assets/images/author/erikaOliver.webp";
 import joshuaWood from "../public/assets/images/author/joshuaWood.webp";
 import marioSanchez from "../public/assets/images/author/marioSanchez.webp";
 
-import mainPostText from "../public/texts/mainPost.js";
+import mainPostText from "../public/assets/texts/mainPost.js";
 
 const mainPosts = [
   {

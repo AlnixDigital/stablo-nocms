@@ -75,7 +75,7 @@ export default function Post() {
               {post.body.map(text => text)}
             </div>
             <div className="flex justify-center mt-7 mb-7">
-              <Link href="/">
+              <Link href="/" legacyBehavior>
                 <a className="px-5 py-2 text-sm text-blue-600 rounded-full dark:text-blue-500 bg-brand-secondary/20 ">
                   ← View all posts
                 </a>

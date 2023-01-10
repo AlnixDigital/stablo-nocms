@@ -2,9 +2,8 @@ import React from "react";
 import { Disclosure } from "@headlessui/react";
 import Container from "@components/container";
 import Link from "next/link";
-import Image from "next/image";
-import GetImage from "@utils/getImage";
-import { myLoader } from "@utils/all";
+import Image from "next/legacy/image";
+import logo from "../public/assets/images/StabloLogo.svg";
 
 export default function Navbar(props) {
   const leftmenu = [
@@ -14,18 +13,18 @@ export default function Navbar(props) {
     },
     {
       label: "About",
-      href: "/about"
+      href: "/"
     },
     {
       label: "Contact",
-      href: "/contact"
+      href: "/"
     }
   ];
 
   const rightmenu = [
     {
       label: "Archive",
-      href: "/archive"
+      href: "/"
     },
     {
       label: "Pro Version",
@@ -51,7 +50,7 @@ export default function Navbar(props) {
               <div className="flex flex-wrap justify-between md:gap-10 md:flex-nowrap">
                 <div className="flex-col items-center justify-start order-1 hidden w-full md:flex md:flex-row md:justify-end md:w-auto md:order-none md:flex-1">
                   {leftmenu.map((item, index) => (
-                    <Link href={item.href} key={index}>
+                    <Link href={item.href} key={index} legacyBehavior>
                       <a className="px-5 py-2 text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-blue-500">
                         {item.label}
                       </a>
@@ -59,36 +58,14 @@ export default function Navbar(props) {
                   ))}
                 </div>
                 <div className="flex items-center justify-between w-full md:w-auto">
-                  <Link href="/">
+                  <Link href="/" legacyBehavior>
                     <a className="w-28 dark:hidden">
-                      {props.logo ? (
-                        <Image
-                          {...GetImage(props.logo)}
-                          alt="Logo"
-                          sizes="(max-width: 640px) 100vw, 200px"
-                          priority={true}
-                        />
-                      ) : (
-                        <span className="block text-center">
-                          Stablo
-                        </span>
-                      )}
-                    </a>
-                  </Link>
-                  <Link href="/">
-                    <a className="hidden w-28 dark:block">
-                      {props.logoalt ? (
-                        <Image
-                          {...GetImage(props.logoalt)}
-                          alt="Logo"
-                          sizes="(max-width: 640px) 100vw, 200px"
-                          priority={true}
-                        />
-                      ) : (
-                        <span className="block text-center">
-                          Stablo
-                        </span>
-                      )}
+                      <Image
+                        src={logo}
+                        alt="Logo"
+                        sizes="(max-width: 640px) 100vw, 200px"
+                        priority={true}
+                      />
                     </a>
                   </Link>
                   <Disclosure.Button
@@ -117,7 +94,7 @@ export default function Navbar(props) {
 
                 <div className="flex-col items-center justify-start order-2 hidden w-full md:flex md:flex-row md:w-auto md:flex-1 md:order-none">
                   {rightmenu.map((item, index) => (
-                    <Link href={item.href} key={index}>
+                    <Link href={item.href} key={index} legacyBehavior>
                       <a
                         className="px-5 py-2 text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-blue-500"
                         target={item.external ? "_blank" : ""}
@@ -136,7 +113,7 @@ export default function Navbar(props) {
               <Disclosure.Panel>
                 <div className="flex flex-col items-center justify-start order-2 w-full md:hidden">
                   {mobilemenu.map((item, index) => (
-                    <Link href={item.href} key={index}>
+                    <Link href={item.href} key={index} legacyBehavior>
                       <a
                         className="px-5 py-2 text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-blue-500"
                         target={item.external ? "_blank" : ""}
