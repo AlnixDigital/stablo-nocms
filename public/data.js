@@ -17,7 +17,8 @@ const mainPosts = [
       "Architectural Engineering Wonders of the modern era for your Inspiration",
     author: {
       image: marioSanchez,
-      name: "Mario Sanchez"
+      name: "Mario Sanchez",
+      bio: "Mario is a Staff Engineer specialising in Frontend at Vercel, as well as being a co-founder of Acme and the content management system Sanity. Prior to this, he was a Senior Engineer at Apple."
     },
     publishedAt: "2022-10-21T14:34:32.999Z",
     body: mainPostText
