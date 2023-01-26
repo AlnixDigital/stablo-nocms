@@ -2,6 +2,7 @@ import Image from "next/legacy/image";
 import Link from "next/link";
 import { parseISO, format } from "date-fns";
 import CategoryLabel from "@components/blog/category";
+import { cx } from "@utils/all";
 
 export default function PostList({ post, aspect, preloadImage }) {
   const imageProps = post?.mainImage;
@@ -10,10 +11,10 @@ export default function PostList({ post, aspect, preloadImage }) {
     <>
       <div className="cursor-pointer group">
         <div
-          className={{"relative overflow-hidden transition-all bg-gray-100 rounded-md dark:bg-gray-800   hover:scale-105",
-            aspect === "landscape" ? "aspect-video" : "aspect-square"}}
-            
-          >
+          className={cx(
+            "relative overflow-hidden transition-all bg-gray-100 rounded-md dark:bg-gray-800   hover:scale-105",
+            aspect === "landscape" ? "aspect-video" : "aspect-square"
+          )}>
           <Link
             href={
               post.title ===

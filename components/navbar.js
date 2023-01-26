@@ -3,7 +3,8 @@ import { Disclosure } from "@headlessui/react";
 import Container from "@components/container";
 import Link from "next/link";
 import Image from "next/legacy/image";
-import logo from "../public/assets/images/StabloLogo.svg";
+
+import Logo from "../public/img/logo.svg";
 
 export default function Navbar(props) {
   const leftmenu = [
@@ -61,7 +62,7 @@ export default function Navbar(props) {
                   <Link href="/" legacyBehavior>
                     <a className="w-28 dark:hidden">
                       <Image
-                        src={logo}
+                        src={Logo}
                         alt="Logo"
                         sizes="(max-width: 640px) 100vw, 200px"
                         priority={true}

@@ -2,6 +2,7 @@ import Container from "@components/container";
 import ThemeSwitch from "@components/themeSwitch";
 import Image from "next/legacy/image";
 import VercelLogo from "../public/img/vercel.svg";
+import { HiArrowUpRight } from "react-icons/hi";
 
 export default function Footer(props) {
   return (

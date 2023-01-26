@@ -4,7 +4,7 @@ import marioSanchez from "../public/assets/images/author/marioSanchez.webp";
 
 import mainPostText from "../public/assets/texts/mainPost.js";
 
-const mainPosts = [
+export const mainPosts = [
   {
     mainImage: require("../public/assets/images/mainPosts/mainPosts_0.webp"),
     categories: [
@@ -41,7 +41,7 @@ const mainPosts = [
   }
 ];
 
-const secondaryPosts = [
+export const secondaryPosts = [
   {
     mainImage: require("../public/assets/images/secondaryPosts/secondaryPosts_0.webp"),
     categories: [
@@ -252,5 +252,3 @@ const secondaryPosts = [
     publishedAt: "2022-09-14T14:34:32.999Z"
   }
 ];
-
-export { mainPosts, secondaryPosts };

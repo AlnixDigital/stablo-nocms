@@ -2,9 +2,9 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  experimental: {
-    legacyBrowsers: false,
-    browsersListForSwc: true
+  webpack(config) {
+    config.infrastructureLogging = { debug: /PackFileCache/ };
+    return config;
   }
 };
 

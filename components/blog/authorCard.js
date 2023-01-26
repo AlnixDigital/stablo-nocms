@@ -11,7 +11,7 @@ export default function AuthorCard({ author }) {
               src={imageProps.src}
               objectFit="cover"
               alt={author.name}
-              placeholder="blur"
+              // placeholder="blur"
               layout="fill"
               className="rounded-full"
             />

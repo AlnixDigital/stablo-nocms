@@ -3,19 +3,20 @@ import Link from "next/link";
 import Layout from "@components/layout";
 import Container from "@components/container";
 import { parseISO, format } from "date-fns";
+import cheerio from "cheerio";
 
 import CategoryLabel from "@components/blog/category";
 import AuthorCard from "@components/blog/authorCard";
 
-import { mainPosts } from "../public/data.js";
+import { mainPosts } from "../../public/data.js";
 
 export default function Post() {
   const post = mainPosts[0];
-  const AuthorimageProps = mainPost?.author?.image;
+  const AuthorimageProps = mainPosts[0]?.author?.image;
+
   return (
     <>
       <Layout>
-        <Layout></Layout>
         <Container className="!pt-0">
           <div className="max-w-screen-md mx-auto ">
             <div className="text-center">
@@ -32,8 +33,8 @@ export default function Post() {
                   <Image
                     src={AuthorimageProps}
                     objectFit="cover"
-                    alt={post?.author?.name}
                     placeholder="blur"
+                    alt={post?.author?.name}
                     layout="fill"
                     className="rounded-full"
                   />
@@ -72,7 +73,17 @@ export default function Post() {
         <Container>
           <article className="max-w-screen-md mx-auto ">
             <div className="mx-auto my-3 prose prose-base dark:prose-invert prose-a:text-blue-500">
-              {post.body.map(text => text)}
+              {post.body.map(text => {
+                const myHtml = cheerio.load(text, null, false);
+
+                return (
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: myHtml.html()
+                    }}
+                  />
+                );
+              })}
             </div>
             <div className="flex justify-center mt-7 mb-7">
               <Link href="/" legacyBehavior>
