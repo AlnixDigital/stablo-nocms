@@ -1,4 +1,5 @@
 import Layout from "@components/layout.js";
+import { NextSeo } from "next-seo";
 import Container from "@components/container";
 import PostList from "@components/postlist";
 import { mainPosts, secondaryPosts } from "../public/data.js";
@@ -10,6 +11,10 @@ export default function Posts() {
   return (
     <>
       <Layout>
+        <NextSeo
+          title="Stablo — Free Blog Website Template"
+          description="Stablo — Free Blog Website Template"
+        />
         <Container>
           <div className="grid gap-10 lg:gap-10 md:grid-cols-2 ">
             {mainPosts.map((post, idx) => (

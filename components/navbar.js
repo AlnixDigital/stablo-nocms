@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/legacy/image";
 
 import Logo from "../public/img/logo.svg";
+import LogoWhite from "../public/img/logo-white.svg";
 
 export default function Navbar(props) {
   const leftmenu = [
@@ -61,12 +62,38 @@ export default function Navbar(props) {
                 <div className="flex items-center justify-between w-full md:w-auto">
                   <Link href="/" legacyBehavior>
                     <a className="w-28 dark:hidden">
-                      <Image
-                        src={Logo}
-                        alt="Logo"
-                        sizes="(max-width: 640px) 100vw, 200px"
-                        priority={true}
-                      />
+                      {Logo ? (
+                        <Image
+                          src={Logo}
+                          alt="Logo"
+                          // layout="fixed"
+                          sizes="(max-width: 640px) 100vw, 200px"
+                          // unoptimized={true}
+                          priority={true}
+                        />
+                      ) : (
+                        <span className="block text-center">
+                          Stablo
+                        </span>
+                      )}
+                    </a>
+                  </Link>
+                  <Link href="/" legacyBehavior>
+                    <a className="hidden w-28 dark:block">
+                      {LogoWhite ? (
+                        <Image
+                          src={LogoWhite}
+                          // unoptimized={true}
+                          alt="Logo"
+                          sizes="(max-width: 640px) 100vw, 200px"
+                          // layout="fixed"
+                          priority={true}
+                        />
+                      ) : (
+                        <span className="block text-center">
+                          Stablo
+                        </span>
+                      )}
                     </a>
                   </Link>
                   <Disclosure.Button

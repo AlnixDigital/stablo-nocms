@@ -1,5 +1,6 @@
 import Image from "next/legacy/image";
 import Link from "next/link";
+import { NextSeo } from "next-seo";
 import Layout from "@components/layout";
 import Container from "@components/container";
 import { parseISO, format } from "date-fns";
@@ -17,6 +18,7 @@ export default function Post() {
   return (
     <>
       <Layout>
+        <NextSeo title={post.title} description={post.title} />
         <Container className="!pt-0">
           <div className="max-w-screen-md mx-auto ">
             <div className="text-center">
